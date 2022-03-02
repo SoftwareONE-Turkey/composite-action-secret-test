@@ -1,0 +1,15 @@
+name: 'Kubernetes Cluster Deploy '
+description: 'test '
+inputs:
+  KUBECONFIG:  # kubeconfig
+    description: 'Cluster Kubeconfig File'
+    required: false
+    default: 'default'
+ 
+runs:
+  using: "composite"
+  steps:
+    - name: Repository Files are downloading
+      uses: actions/checkout@v2
+    - run : echo ${{ secrets.ENESSECRETTEST }} 
+      shell: bash
